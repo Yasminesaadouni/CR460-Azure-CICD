@@ -69,8 +69,8 @@ resource "azurerm_container_group" "container" {
   dns_name_label      = "cr460dockercontainer"
 
   container {
-    name   = "nginx"
-    image  = "nginx:latest"
+    name   = "hello-world"
+    image  = "mcr.microsoft.com/azuredocs/aci-helloworld"
     cpu    = "0.5"
     memory = "1.5"
 
