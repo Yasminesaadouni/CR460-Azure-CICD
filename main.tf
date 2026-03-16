@@ -37,7 +37,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "cr460-vm"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  size                = "Standard_B2s"
+  size                = "Standard_B1ms"
   admin_username      = "azureuser"
   admin_password      = "Password1234!"
 
