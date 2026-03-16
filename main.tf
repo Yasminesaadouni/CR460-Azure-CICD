@@ -64,13 +64,13 @@ resource "azurerm_container_group" "container" {
   name                = "cr460-container"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  ip_address_type     = "public"
-  dns_name_label      = "cr460containerdemo"
   os_type             = "Linux"
+  ip_address_type     = "Public"
+  dns_name_label      = "cr460dockercontainer"
 
   container {
     name   = "nginx"
-    image  = "nginx"
+    image  = "nginx:latest"
     cpu    = "0.5"
     memory = "1.5"
 
@@ -78,10 +78,5 @@ resource "azurerm_container_group" "container" {
       port     = 80
       protocol = "TCP"
     }
-  }
-
-  ports {
-    port     = 80
-    protocol = "TCP"
   }
 }
